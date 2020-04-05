@@ -143,17 +143,19 @@ contract('Auction', function ([owner, Alice, Bob, Carol, Dan]) {
         assert.equal(bal3, 0)
     }) 
 
-    /*
+    
     it('contract balance should be 0 after everyone withdraws', async function() {
-        await this.auction.withdraw({from: Bob});
-        //await this.auction.contractBalance()
-        let balance = await ethGetBalance(this.auction.address)
-        console.warn(balance)
+        //await this.auction.withdraw({from: Bob});
+        bal = await this.auction.contractBalance.call()
+	assert.equal(bal, 0)
+	//console.warn(bal.toString())
+        //let balance = await ethGetBalance(this.auction.address)
+        //console.warn(balance)
         //console.log("Contract's balance: " + (await ethGetBalance(this.auction.address), 'ether'));
         //await this.auction.withdraw({from: Carol});
         //await this.auction.withdraw({from: Dan});
         //contractBalance = await this.auction.contractBalance()
         //assert.equal(contractBalance, 0)
     })
-    */
+    
 });
