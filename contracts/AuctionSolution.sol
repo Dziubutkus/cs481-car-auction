@@ -99,7 +99,7 @@ contract MyAuction is Auction{
     }
     
     function contractBalance() public view returns(uint) {
-        return address(this).balance;
+        return (address(this)).balance;
     }
     
     function buyCar() external {

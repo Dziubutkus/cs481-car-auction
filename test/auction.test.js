@@ -36,7 +36,7 @@ contract('Auction', function ([owner, Alice, Bob, Carol, Dan]) {
     const rNumber = "?";
 
     before(async function () {
-        this.auction = await Auction.new(biddingTime, brand, rNumber, {from: owner});
+        this.auction = await Auction.new(biddingTime, owner, brand, rNumber, {from: owner});
         //this.auction = await Auction.new(biddingTime, owner, brand, rNumber, {from: owner});
     });
 
@@ -85,7 +85,7 @@ contract('Auction', function ([owner, Alice, Bob, Carol, Dan]) {
     });
 
     it('should cancel auction', async function() {
-        await this.auction.cancelAuction({from: owner});
+        await this.auction.cancel_auction({from: owner});
     });
     /*
     function timeout(ms) {
@@ -143,17 +143,17 @@ contract('Auction', function ([owner, Alice, Bob, Carol, Dan]) {
         assert.equal(bal3, 0)
     }) 
 
-    /*
-    it('contract balance should be 0 after everyone withdraws', async function() {
-        await this.auction.withdraw({from: Bob});
+    
+    //it('contract balance should be 0 after everyone withdraws', async function() {
+        //await this.auction.withdraw({from: Bob});
         //await this.auction.contractBalance()
-        let balance = await ethGetBalance(this.auction.address)
-        console.warn(balance)
+        //let balance = await ethGetBalance(this.auction.address)
+        //console.warn(balance)
         //console.log("Contract's balance: " + (await ethGetBalance(this.auction.address), 'ether'));
         //await this.auction.withdraw({from: Carol});
         //await this.auction.withdraw({from: Dan});
         //contractBalance = await this.auction.contractBalance()
         //assert.equal(contractBalance, 0)
-    })
-    */
+    //})
+    
 });
