@@ -14,7 +14,7 @@ Open a new terminal and enter:
 ```
 ganache-cli
 ```
-Or if you are using Ganache GUI, run it.
+Or if you are using Ganache GUI, run it. Make sure your port number is the same as in truffle-config.js (8545)
 
 **Change owner address**
 
@@ -47,8 +47,4 @@ That is because it tried to call buyCar() for the second time, and was reverted,
 
 If the difference is significant (~2 ether), then you have a mistake in your code.
 
-**Insert a pic**
-
-Some students might have 1-2 more reverts. 
-
-**finish this**
+Some students might have 1-2 more reverts. It is because some students created modifiers, some added require statements, some did not, so it is only possible to know if the code is correct by manually checking it.
