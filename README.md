@@ -12,11 +12,11 @@ npm install
 
 Open a new terminal and enter:
 ```
-ganache-cli
+ganache-cli --mnemonic cs481
 ```
 Or if you are using Ganache GUI, run it. Make sure your port number is the same as in truffle-config.js (8545)
 
-**Change owner address**
+**Change owner address if you are using GUI and can't change mnemonic**
 
 Copy the first address from the output and update the owner variable in `migrations/2_deploy.js`
 ```
