@@ -31,6 +31,13 @@ Replace content of AuctionSolution.sol with your solidity code.
 
 If you are using solidity 0.6.0, then change the compiler version in `truffle-config.js`
 
+**Change 2 require statements**
+Truffle test run so fast that `now > end` does not work and needs to be changed to `now >= end`
+1) in withdraw()
+`require(now >= end , "You can't withdraw, the auction is still open");`
+2) in buyCar()
+`require(now >= end, "Auction is still ongoing"); `
+
 ## Run the test
 
 You should be all setup by now.
