@@ -42,8 +42,8 @@ contract Auction {
 
 contract MyAuction is Auction{
   
-    constructor (uint _biddingTime, string memory _brand, string memory _number) public {
-        owner = msg.sender;
+    constructor (uint _biddingTime, address _owner, string memory _brand, string memory _number) public {
+        owner = _owner;
         start = now;
         end = start + _biddingTime * 1 minutes;
         STATE = auctionState.STARTED;
@@ -68,7 +68,7 @@ contract MyAuction is Auction{
         return true;
     }
     
-    function cancelAuction() external onlyOwner isOngoing returns (bool) {
+    function cancel_auction() external onlyOwner isOngoing returns (bool) {
         STATE = auctionState.CANCELLED;
         end = now;
         emit CanceledEvent("Auction Cancelled", now);
